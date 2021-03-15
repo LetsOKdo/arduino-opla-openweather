@@ -91,6 +91,7 @@ void loop() {
       connectWiFi();
       requestData();
       parseData();
+      showWeather(town, weather);
       disconnectWiFi();
       
       changeState(0);
@@ -207,7 +208,6 @@ void parseData() {
     temp_out = myObject["main"]["temp"];
 
     if (line.startsWith("{")) {
-      showWeather(town, weather);
       break;
     }
   }  
